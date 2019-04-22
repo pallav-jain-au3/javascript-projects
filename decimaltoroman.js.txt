@@ -1,0 +1,25 @@
+function convertToRoman(num) {
+ var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+    var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+    var romanized = '';
+    do{
+    for (let index in decimalValue) {
+        if (num >= decimalValue[index])
+        {
+            console.log("decimal value:",decimalValue[index])
+            var n = Math.floor(num / decimalValue[index]) ;
+            console.log(n)
+            while(n > 0){
+                romanized += romanNumeral[index] ;
+                n--;
+            }
+            console.log(romanized);
+            num = num % decimalValue[index];
+            
+        }
+    }
+    }while (num > 0);
+ return romanized;
+}
+
+convertToRoman(798);
